@@ -14,12 +14,12 @@ A flexible SCSS mixin for writing media queries
 ## Basic usage:
 
 ```
-@mixin respond($min, $max: null, $media: "screen", $orientation: null) {
+@mixin respond($min, $max, $media, $orientation) {
   @content;
 }
 ```
 
-The only required value is a `min-width`, based on mobile-first principles.
+The only required value is a `min-width`, based on a mobile-first approach.
 
 ## Examples
 
