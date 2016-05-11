@@ -1,13 +1,15 @@
-# SCSS Media Query
+# SCSS Media Query Mixin
 
 A flexible SCSS mixin for writing media queries
 
 ## Media Query Values
 
-* `min-width` (required): enter an scss variable that represents a width or an explicit pixel value (e.g. 768px)
-* `max-width` (optional, defaults to `null`): enter an scss variable or explicit width, but **it is important to note** that this value has 1px subtracted from it in the mixin, which makes using variables much easier (see example 2)
-* `media` (optional, defaults to `screen`): the other valid value is `print` for a media query that responds to print
-* `orientation` (optional, defaults to `null`): the valid values are `orientation` (meaning the width of the screen is > the height) and `portrait` (the width is < than the height)
+| Value | Required? | Default Value | Description |
+| --- | --- | --- | --- |
+| `min-width` | Yes | None | Enter an scss variable that represents a width or an explicit pixel value (e.g. 768px) |
+| `max-width` | No | `null` | Enter an scss variable or explicit width, but **it is important to note** that this value has 1px subtracted from it in the mixin, which makes using variables much easier (see example 2) |
+| `media` | No | `screen` | The other valid value is `print` for a media query that responds to print |
+| `orientation` | No | `null` | The valid values are `orientation` (meaning the width of the screen is > the height) and `portrait` (the width is < than the height) |
 
 ## Basic usage:
 
