@@ -1,15 +1,15 @@
 # SCSS Media Query
 
-SCSS mixin for media queries
+A flexible SCSS mixin for writing media queries
 
-## Values
+## Media Query Values
 
 * `min-width` (required): enter an scss variable that represents a width or an explicit pixel value (e.g. 768px)
 * `max-width` (optional, defaults to `null`): enter an scss variable or explicit width, but **it is important to note** that this value has 1px subtracted from it in the mixin, which makes using variables much easier (see example 2)
 * `media` (optional, defaults to `screen`): the other valid value is `print` for a media query that responds to print
 * `orientation` (optional, defaults to `null`): the valid values are `orientation` (meaning the width of the screen is > the height) and `portrait` (the width is < than the height)
 
-Basic usage:
+## Basic usage:
 
 ```
 @mixin respond($min, $max: null, $media: "screen", $orientation: null) {
@@ -22,6 +22,8 @@ The only required value is a `min-width`, based on mobile-first principles.
 ## Examples
 
 ### Example 1 – Min-Width Only
+
+Because this is the most common media query I use, it is the simplest to write. Since the other values have defaults, only passing 1 value will result in a `min-width` media query for screens, for example:
 
 ```
 @mixin respond(768px) {
@@ -39,6 +41,8 @@ Compiles to:
 
 ### Example 2 – Min-Width and Max-Width
 
+To create rules that are applied between to given breakpoints, using a comma to seperate 2 values or variables in the mixin will result in a media query with min and max widths, such as:
+
 ```
 @mixin respond(768px, 1024px) {
   @content;
@@ -55,7 +59,9 @@ Compiles to:
 
 ### Example 3 – Separate Min-Width and Max-Width Media Queries
 
-A common use case for media queries is to have a selector respond both ≤ a certain width and > a certain width without overriding any styles
+A common use case for media queries is to have a selector respond both ≤ a certain width and > a certain width without overriding any styles.
+
+To accomplish this, use 2 mixins, one to establish the rules that will be applied above the `min-width` value, and one to establish the rules that will be applied below the `max-width` value, consider the following code for example:
 
 ```
 $medium: 768px;
@@ -90,7 +96,11 @@ Compiles to:
 
 ### Example 3 – Print
 
-Because the default value for `@media` is `screen`, the `print` value needs to be passed as the third value; if you do not want to use a min or max width, you must pass `null` values as follows:
+Because the default value for `@media` is `screen`, the `print` value needs to be passed as the third value; if you do not want to use a min or max width, you must pass `null` values.
+
+> Don't forget to comma separate the values
+
+Here is the simplest print media query:
 
 ```
 @mixin respond(null, null, print) {
@@ -108,7 +118,7 @@ Compiles to:
 
 ### Example 4 – Orientation
 
-Using orientation:
+If you need to target screens with a specific orientation, consider the following structure:
 
 ```
 $small: 480px;
