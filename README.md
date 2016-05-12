@@ -36,7 +36,7 @@ Because this is the most common media query I use, it is the simplest to write. 
 Compiles to:
 
 ```
-@media screen and ( min-width: 768px ) {
+@media screen and (min-width: 768px) {
   @content;
 }
 ```
@@ -54,7 +54,7 @@ To create rules that are applied between to given breakpoints, using a comma to 
 Compiles to:
 
 ```
-@media screen and ( min-width: 768px ) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   @content;
 }
 ```
@@ -83,13 +83,13 @@ $medium: 768px;
 Compiles to:
 
 ```
-@media screen and ( min-width: 768px ) {
+@media screen and (min-width: 768px) {
   .selector {
     // greater than medium
   }
 }
 
-@media screen and ( max-width: 767px ) {
+@media screen and (max-width: 767px) {
   .selector {
     // less than medium
   }
@@ -134,7 +134,7 @@ $large: 1024px;
 Compiles to:
 
 ```
-@media screen and ( min-width: 768px ) and (max-width: 1023px) and ( orientation: portrait ){
+@media screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait){
   @content;
 }
 ```
