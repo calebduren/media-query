@@ -85,13 +85,13 @@ Compiles to:
 ```
 @media screen and (min-width: 768px) {
   .selector {
-    // greater than medium
+    /* greater than medium */
   }
 }
 
 @media screen and (max-width: 767px) {
   .selector {
-    // less than medium
+    /* less than medium */
   }
 }
 ```
@@ -134,7 +134,7 @@ $large: 1024px;
 Compiles to:
 
 ```
-@media screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait){
+@media screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
   @content;
 }
 ```
